@@ -36,6 +36,7 @@ public class CommonController<E, S extends CommonService<E>> {
 	
 	@GetMapping("/{id}")
 	public ResponseEntity<?> ver(@PathVariable Long id){
+		System.out.println("CABRON");
 		Optional<E> o = service.findById(id);
 		if(o.isEmpty()) {
 			return ResponseEntity.notFound().build();
